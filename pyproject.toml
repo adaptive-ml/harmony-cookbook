@@ -1,0 +1,13 @@
+[project]
+name = "harmony-cookbook"
+version = "0.1.0"
+description = "Examples of training, evaluation and data generation recipes using Adaptive Harmony"
+readme = "README.md"
+requires-python = "==3.12"
+dependencies = [
+    "adaptive-harmony",
+    "adaptive-sdk",
+    "ipykernel",
+    "jupyter",
+    "dotenv",
+]
