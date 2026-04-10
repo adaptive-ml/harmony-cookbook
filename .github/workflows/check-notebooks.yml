@@ -1,0 +1,23 @@
+name: 📓 Check notebooks executed
+
+on:
+  pull_request:
+    paths:
+      - "**/*.ipynb"
+  push:
+    branches: [main]
+    paths:
+      - "**/*.ipynb"
+
+jobs:
+  check-notebooks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: 🔍 Check all code cells are executed
+        run: python .github/scripts/check_notebooks_executed.py
